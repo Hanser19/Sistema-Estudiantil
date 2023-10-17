@@ -1,0 +1,42 @@
+﻿@model List<INSCRIPCION_ESTUDIANTIL.Models.Curso>
+
+@{
+    ViewData["Title"] = "Cursos";
+}
+
+<h1>Registro de Curso</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Lista de Cursos</h5>
+    </div>
+
+    <div class="card-body">
+        <a class="btn btn-success btn-sm" asp-action="Curso_Detalle" asp-controller="Home" asp-route-ID_CURSO="0">Crear Nuevo</a>
+        <hr />
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre del Curso</th>
+                    <th>Descripcion del Curso</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NombreCurso</td>
+                        <td>@item.DescripcionCurso</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Curso_Detalle" asp-controller="Home" asp-route-ID_CURSO="@item.IdCurso">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar_Curso" asp-controller="Home" asp-route-ID_CURSO="@item.IdCurso">Eliminar</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

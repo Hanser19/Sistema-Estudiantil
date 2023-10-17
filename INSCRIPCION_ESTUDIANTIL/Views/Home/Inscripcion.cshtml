@@ -1,0 +1,46 @@
+﻿@model List<INSCRIPCION_ESTUDIANTIL.Models.Inscripcion>
+
+@{
+    ViewData["Title"] = "Inscripcion";
+}
+
+<h1>Registro de Inscripcion</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Lista de Inscripciones</h5>
+    </div>
+
+    <div class="card-body">
+        <a class="btn btn-success btn-sm" asp-action="Inscripcion_Detalle" asp-controller="Home" asp-route-ID_INSCRIPCION="0">Crear Nuevo</a>
+        <hr />
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Fecha De Inscripcion</th>
+                    <th>Matricula del Estudiante</th>
+                    <th>Curso</th>
+                    <th>Estado de Inscripcion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FechaInscripcion</td>
+                        <td>@item.IdEstudiante</td>
+                        <td>@item.IdCurso</td>
+                        <td>@item.EstadoInscripcion</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Inscripcion_Detalle" asp-controller="Home" asp-route-ID_INSCRIPCION="@item.IdInscripcion">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar_Inscripcion" asp-controller="Home" asp-route-ID_INSCRIPCION="@item.IdInscripcion">Eliminar</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

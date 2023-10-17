@@ -1,0 +1,1 @@
+Scaffold-DbContext "Server=HANSER-DESKTOP\SQLEXPRESS; DataBase=DBPROYECTO; Encrypt=False; Integrated Security=True"Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models
