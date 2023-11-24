@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using INSCRIPCION_ESTUDIANTIL.Models;
 using INSCRIPCION_ESTUDIANTIL.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.InkML;
 
 namespace INSCRIPCION_ESTUDIANTIL.Controllers
 {
@@ -21,12 +24,59 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
             List<Inscripcion> lista = _DBContext.Inscripcion.Include(C => C.oCurso).ToList();
             return View(lista);
         }
+
         //Modulo correspondiente a Inscripcion
 
         public IActionResult Inscripcion()
         {
             List<Inscripcion> lista = _DBContext.Inscripcion.Include(C => C.oCurso).ToList();
             return View(lista);
+        }
+
+        //HttpGet para exportar las inscripciones al excel
+        [HttpGet]
+        public async Task<FileResult> ExportarInscripcionesAlExcel()
+        {
+            var inscripciones = await _DBContext.Inscripcion.ToListAsync();
+            var nombreArchivo = $"Listado de Inscripciones.xlsx";
+            return GenerarExcelInscripcion(nombreArchivo, inscripciones);
+        }
+
+        //Generar excel de Inscripciones
+        private FileResult GenerarExcelInscripcion(string nombreArchivo, IEnumerable<Inscripcion> inscripciones)
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID_INSCRIPCION"),
+                new DataColumn("FECHA_INSCRIPCION"),
+                new DataColumn("ID_ESTUDIANTE"),
+                new DataColumn("ID_CURSO"),
+                new DataColumn("ESTADO_INSCRIPCION"),
+            });
+
+            foreach (var inscripcion in inscripciones)
+            {
+                dataTable.Rows.Add(inscripcion.IdInscripcion,
+                    inscripcion.FechaInscripcion,
+                    inscripcion.IdEstudiante,
+                     inscripcion.IdCurso,
+                      inscripcion.EstadoInscripcion);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable, "Lista de Inscripciones");
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        nombreArchivo);
+                }
+            }
         }
 
         [HttpGet]
@@ -93,6 +143,49 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
         {
             List<Curso> lista = _DBContext.Cursos.ToList();
             return View(lista);
+        }
+
+        //HttpGet para exportar los cursos al excel
+        [HttpGet]
+        public async Task<FileResult> ExportarCursosAlExcel()
+        {
+            var cursos = await _DBContext.Cursos.ToListAsync();
+            var nombreArchivo = $"Listado de Cursos.xlsx";
+            return GenerarExcelCurso(nombreArchivo, cursos);
+        }
+
+        //Generar excel de Curso
+        private FileResult GenerarExcelCurso(string nombreArchivo, IEnumerable<Curso> cursos)
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID_CURSO"),
+                new DataColumn("NOMBRE_CURSO"),
+                new DataColumn("DESCRIPCION_CURSO")
+
+            });
+
+            foreach (var curso in cursos)
+            {
+                dataTable.Rows.Add(curso.IdCurso,
+                    curso.NombreCurso,
+                    curso.DescripcionCurso);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable, "Lista de Cursos");
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        nombreArchivo);
+                }
+            }
         }
 
 

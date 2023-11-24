@@ -799,3 +799,10 @@ C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\o
 C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\obj\Debug\net6.0\INSCRIPCION_ESTUDIANTIL.pdb
 C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\obj\Debug\net6.0\INSCRIPCION_ESTUDIANTIL.genruntimeconfig.cache
 C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\obj\Debug\net6.0\ref\INSCRIPCION_ESTUDIANTIL.dll
+C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\bin\Debug\net6.0\ClosedXML.dll
+C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\bin\Debug\net6.0\ExcelNumberFormat.dll
+C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\bin\Debug\net6.0\Irony.dll
+C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\bin\Debug\net6.0\SixLabors.Fonts.dll
+C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\bin\Debug\net6.0\System.IO.Packaging.dll
+C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\bin\Debug\net6.0\XLParser.dll
