@@ -1,0 +1,68 @@
+﻿@model INSCRIPCION_ESTUDIANTIL.Models.ViewModels.ProfesoresVM
+
+@{
+    ViewData["Title"] = "Profesores_Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model.oProfesores.IdProfesor == 0)
+{
+    <h1>Crear Profesor</h1>
+}
+
+else
+{
+    <h1>Editar Profesor</h1>
+}
+
+<div class="row">
+    <div class="col-sm-4">
+
+        <form asp-action="Profesores_Detalle" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="oProfesores.IdProfesor" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oProfesores">Nombre del Profesor</label>
+                <input class="form-control form-control-sm" asp-for="oProfesores.NombreProfesor" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oProfesores.CorreoProfesor">Correo del Profesor</label>
+                <input class="form-control form-control-sm" asp-for="oProfesores.CorreoProfesor" type="text" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oProfesores.IdSecciones">Secciones</label>
+                <select class="form-select form-select-sm" asp-for="oProfesores.IdSecciones" asp-items="@Model.oListaSecciones">
+                    <option selected disabled>-- Seleccionar --</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oProfesores.IdAsignaturas">Asignaturas</label>
+                <select class="form-select form-select-sm" asp-for="oProfesores.IdAsignaturas" asp-items="@Model.oListaAsignaturas">
+                    <option selected disabled>-- Seleccionar --</option>
+                </select>
+            </div>
+
+            <div class="mb-2">
+                @if (Model.oProfesores.IdProfesor == 0)
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Crear</button>
+
+                }
+
+                else
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Actualizar</button>
+                }
+
+                <a class="btn btn-dark btn-sm" asp-action="Index" asp-controller="Home">Volver</a>
+
+
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -9,57 +9,105 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = INSCRIPCION_ESTUDIANTIL
 build_property.RootNamespace = INSCRIPCION_ESTUDIANTIL
-build_property.ProjectDir = C:\Users\Hanser Perez\source\repos\INSCRIPCION_ESTUDIANTIL\INSCRIPCION_ESTUDIANTIL\
+build_property.ProjectDir = C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Hanser Perez\source\repos\INSCRIPCION_ESTUDIANTIL\INSCRIPCION_ESTUDIANTIL
+build_property.MSBuildProjectDirectory = C:\Users\Hanser Perez\source\repos\Sistema-Estudiantil\INSCRIPCION_ESTUDIANTIL
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Home/Cursos.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Asignaturas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBc2lnbmF0dXJhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Asignaturas_Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBc2lnbmF0dXJhc19EZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Cursos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDdXJzb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Home/Curso_Detalle.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Curso_Detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDdXJzb19EZXRhbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Home/Eliminar_Curso.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Eliminar_Asignaturas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbGltaW5hcl9Bc2lnbmF0dXJhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Eliminar_Curso.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbGltaW5hcl9DdXJzby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Home/Eliminar_Inscripcion.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Eliminar_Inscripcion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbGltaW5hcl9JbnNjcmlwY2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Home/Index.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Eliminar_Pagos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbGltaW5hcl9QYWdvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Eliminar_Profesores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbGltaW5hcl9Qcm9mZXNvcmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Eliminar_Secciones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbGltaW5hcl9TZWNjaW9uZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Home/Inscripcion.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Inscripcion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNjcmlwY2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Home/Inscripcion_Detalle.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Inscripcion_Detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNjcmlwY2lvbl9EZXRhbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Shared/Error.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Pagos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYWdvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Pagos_Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYWdvc19EZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Profesores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9mZXNvcmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Profesores_Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9mZXNvcmVzX0RldGFsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Secciones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWNjaW9uZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Home/Secciones_Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWNjaW9uZXNfRGV0YWxsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/_ViewImports.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/_ViewStart.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hanser Perez/source/repos/INSCRIPCION_ESTUDIANTIL/INSCRIPCION_ESTUDIANTIL/Views/Shared/_Layout.cshtml]
+[C:/Users/Hanser Perez/source/repos/Sistema-Estudiantil/INSCRIPCION_ESTUDIANTIL/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-o2hjg9sa6k

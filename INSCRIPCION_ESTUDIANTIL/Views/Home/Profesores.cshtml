@@ -1,0 +1,48 @@
+﻿@model List<INSCRIPCION_ESTUDIANTIL.Models.Profesore>
+
+@{
+    ViewData["Title"] = "Profesores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Registro de Profesores</h1>
+
+
+<div class="card">
+    <div class="card-header">
+        <h5>Lista de Profesores</h5>
+    </div>
+
+    <div class="card-body">
+        <a class="btn btn-success btn-sm" asp-action="Profesores_Detalle" asp-controller="Home" asp-route-ID_PROFESOR="0">Crear Nuevo</a>
+        <hr />
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre del Profesor</th>
+                    <th>Correo del Profesor</th>
+                    <th>Secciones</th>
+                    <th>Asignatura</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NombreProfesor</td>
+                        <td>@item.CorreoProfesor</td>
+                        <td>@item.IdSecciones</td>
+                        <td>@item.IdAsignaturas</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Profesores_Detalle" asp-controller="Home" asp-route-ID_PROFESOR="@item.IdProfesor">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar_Profesores" asp-controller="Home" asp-route-ID_PROFESOR="@item.IdProfesor">Eliminar</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

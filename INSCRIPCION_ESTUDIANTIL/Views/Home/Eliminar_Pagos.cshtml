@@ -1,0 +1,41 @@
+﻿@model INSCRIPCION_ESTUDIANTIL.Models.Pago
+
+@{
+    ViewData["Title"] = "Eliminar_Pagos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">Estas seguro de eliminar el Pago?</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+
+        <form asp-action="Eliminar_Pagos" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="IdPago" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="IdPago">Fecha de Pago</label>
+                <input class="form-control form-control-sm" asp-for="FechaPago" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Monto">Monto</label>
+                <input class="form-control form-control-sm" asp-for="Monto" type="text" disabled />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="IdInscripcion">Matricula del Estudiante</label>
+                <input class="form-control form-control-sm" asp-for="oInscripcion.IdEstudiante" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+
+                <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="Pago" asp-controller="Home">Volver</a>
+
+
+            </div>
+        </form>
+
+    </div>
+</div>

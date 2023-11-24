@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hanser Perez\\source\\repos\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj": {}
+    "C:\\Users\\Hanser Perez\\source\\repos\\Sistema-Estudiantil\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hanser Perez\\source\\repos\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj": {
+    "C:\\Users\\Hanser Perez\\source\\repos\\Sistema-Estudiantil\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hanser Perez\\source\\repos\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj",
+        "projectUniqueName": "C:\\Users\\Hanser Perez\\source\\repos\\Sistema-Estudiantil\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj",
         "projectName": "INSCRIPCION_ESTUDIANTIL",
-        "projectPath": "C:\\Users\\Hanser Perez\\source\\repos\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj",
+        "projectPath": "C:\\Users\\Hanser Perez\\source\\repos\\Sistema-Estudiantil\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj",
         "packagesPath": "C:\\Users\\Hanser Perez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hanser Perez\\source\\repos\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL\\obj\\",
+        "outputPath": "C:\\Users\\Hanser Perez\\source\\repos\\Sistema-Estudiantil\\INSCRIPCION_ESTUDIANTIL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hanser Perez\\AppData\\Roaming\\NuGet\\NuGet.Config",

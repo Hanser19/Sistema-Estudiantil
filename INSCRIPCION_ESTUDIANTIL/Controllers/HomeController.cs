@@ -21,6 +21,7 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
             List<Inscripcion> lista = _DBContext.Inscripcion.Include(C => C.oCurso).ToList();
             return View(lista);
         }
+        //Modulo correspondiente a Inscripcion
 
         public IActionResult Inscripcion()
         {
@@ -87,6 +88,7 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
             return RedirectToAction("Inscripcion", "Home");
         }
 
+        //Modulo correspondiente a Curso
         public IActionResult Cursos()
         {
             List<Curso> lista = _DBContext.Cursos.ToList();
@@ -131,7 +133,7 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
         [HttpGet]
         public IActionResult Eliminar_Curso(int Id_Curso)
         {
-            Curso oCurso = _DBContext.Cursos.FirstOrDefault(c => c.IdCurso == Id_Curso);
+            Curso oCurso = _DBContext.Cursos.Where(c => c.IdCurso == Id_Curso).FirstOrDefault();
 
             return View(oCurso);
         }
@@ -184,7 +186,269 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
             return RedirectToAction("Cursos", "Home");
         }
 
+        //Modulo correspondiente a secciones
+        public IActionResult Secciones()
+        {
+            List<Seccione> lista = _DBContext.Secciones.Include(C => C.oCurso).ToList();
+            return View(lista);
+        }
+
+        [HttpGet]
+        public IActionResult Secciones_Detalle(int Id_Secciones)
+        {
+            SeccionesVM oSeccionesVM = new SeccionesVM()
+            {
+                oSecciones = new Seccione(),
+                oListaCursos = _DBContext.Cursos.Select(Curso => new SelectListItem()
+                {
+
+                    Text = Curso.NombreCurso,
+                    Value = Curso.IdCurso.ToString()
+
+                }).ToList()
+            };
+
+            if (Id_Secciones != 0)
+            {
+                oSeccionesVM.oSecciones = _DBContext.Secciones.Find(Id_Secciones);
+            }
+
+            return View(oSeccionesVM);
+        }
+
+        [HttpPost]
+        public IActionResult Secciones_Detalle(SeccionesVM oSeccionesVM)
+        {
+            if (oSeccionesVM.oSecciones.IdSecciones == 0)
+            {
+                _DBContext.Secciones.Add(oSeccionesVM.oSecciones);
+            }
+
+            else
+            {
+                _DBContext.Secciones.Update(oSeccionesVM.oSecciones);
+            }
+
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Secciones", "Home");
+        }
 
 
+        [HttpGet]
+        public IActionResult Eliminar_Secciones(int Id_Secciones)
+        {
+            Seccione oSecciones = _DBContext.Secciones.Include(c => c.oCurso).Where(e => e.IdSecciones == Id_Secciones).FirstOrDefault();
+
+            return View(oSecciones);
+        }
+
+        [HttpPost]
+        public IActionResult Eliminar_Secciones(Seccione oSecciones)
+        {
+
+            _DBContext.Secciones.Remove(oSecciones);
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Secciones", "Home");
+        }
+
+        //Modulo correspondiente a Asignaturas
+        public IActionResult Asignaturas()
+        {
+            List<Asignatura> lista = _DBContext.Asignaturas.ToList();
+            return View(lista);
+        }
+
+        [HttpGet]
+        public IActionResult Asignaturas_Detalle(int Id_Asignaturas)
+        {
+            AsignaturasVM oAsignaturaVM = new AsignaturasVM()
+            {
+                oAsignatura = new Asignatura()
+            };
+
+            if (Id_Asignaturas != 0)
+            {
+                oAsignaturaVM.oAsignatura = _DBContext.Asignaturas.Find(Id_Asignaturas);
+            }
+
+            return View(oAsignaturaVM);
+        }
+
+        [HttpPost]
+        public IActionResult Asignaturas_Detalle(AsignaturasVM oAsignaturaVM)
+        {
+            if (oAsignaturaVM.oAsignatura.IdAsignaturas == 0)
+            {
+                _DBContext.Asignaturas.Add(oAsignaturaVM.oAsignatura);
+            }
+
+            else
+            {
+                _DBContext.Asignaturas.Update(oAsignaturaVM.oAsignatura);
+            }
+
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Asignaturas", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult Eliminar_Asignaturas(int Id_Asignaturas)
+        {
+            Asignatura oAsignaturas = _DBContext.Asignaturas.Where(e => e.IdAsignaturas == Id_Asignaturas).FirstOrDefault();
+
+            return View(oAsignaturas);
+        }
+
+        [HttpPost]
+        public IActionResult Eliminar_Asignaturas(Asignatura oAsignaturas)
+        {
+
+            _DBContext.Asignaturas.Remove(oAsignaturas);
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Asignaturas", "Home");
+        }
+
+        //Modulo correspondiente a Profesores
+        public IActionResult Profesores()
+        {
+            List<Profesore> lista = _DBContext.Profesores.ToList();
+            return View(lista);
+        }
+
+        [HttpGet]
+        public IActionResult Profesores_Detalle(int Id_Profesor)
+        {
+            ProfesoresVM oProfesoresVM = new ProfesoresVM()
+            {
+                oProfesores = new Profesore(),
+                oListaSecciones = _DBContext.Secciones.Select(Seccione => new SelectListItem()
+                {
+
+                    Text = Seccione.NombreSeccion,
+                    Value = Seccione.IdSecciones.ToString()
+
+                }).ToList(),
+
+                oListaAsignaturas = _DBContext.Asignaturas.Select(Asignatura => new SelectListItem()
+                {
+
+                    Text = Asignatura.NombreAsignatura,
+                    Value = Asignatura.IdAsignaturas.ToString()
+
+                }).ToList(),
+            };
+
+            if (Id_Profesor != 0)
+            {
+                oProfesoresVM.oProfesores = _DBContext.Profesores.Find(Id_Profesor);
+            }
+
+            return View(oProfesoresVM);
+        }
+
+        [HttpPost]
+        public IActionResult Profesores_Detalle(ProfesoresVM oProfesoresVM)
+        {
+            if (oProfesoresVM.oProfesores.IdProfesor == 0)
+            {
+                _DBContext.Profesores.Add(oProfesoresVM.oProfesores);
+            }
+
+            else
+            {
+                _DBContext.Profesores.Update(oProfesoresVM.oProfesores);
+            }
+
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Profesores", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult Eliminar_Profesores(int Id_Profesor)
+        {
+            Profesore oProfesores = _DBContext.Profesores.Include(s => s.oSecciones).Include(a => a.oAsignatura).Where(e => e.IdProfesor == Id_Profesor).FirstOrDefault();
+
+            return View(oProfesores);
+        }
+
+        [HttpPost]
+        public IActionResult Eliminar_Profesores(Profesore oProfesores)
+        {
+            _DBContext.Profesores.Remove(oProfesores);
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Profesores", "Home");
+        }
+
+        //Modulo correspondiente a Pagos
+        public IActionResult Pagos()
+        {
+            List<Pago> lista = _DBContext.Pagos.ToList();
+            return View(lista);
+        }
+
+        [HttpGet]
+        public IActionResult Pagos_Detalle(int Id_Pago)
+        {
+            PagosVM oPagosVM = new PagosVM()
+            {
+                oPagos = new Pago(),
+                oListaInscripciones = _DBContext.Inscripcion.Select(Inscripcion => new SelectListItem()
+                {
+
+                    Text = Inscripcion.IdEstudiante,
+                    Value = Inscripcion.IdInscripcion.ToString()
+
+                }).ToList(),
+            };
+
+            if (Id_Pago != 0)
+            {
+                oPagosVM.oPagos = _DBContext.Pagos.Find(Id_Pago);
+            }
+
+            return View(oPagosVM);
+        }
+
+        [HttpPost]
+        public IActionResult Pagos_Detalle(PagosVM oPagosVM)
+        {
+            if (oPagosVM.oPagos.IdPago == 0)
+            {
+                _DBContext.Pagos.Add(oPagosVM.oPagos);
+            }
+
+            else
+            {
+                _DBContext.Pagos.Update(oPagosVM.oPagos);
+            }
+
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Pagos", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult Eliminar_Pagos(int Id_Pago)
+        {
+            Pago oPagos = _DBContext.Pagos.Include(c => c.oInscripcion).Where(e => e.IdPago == Id_Pago).FirstOrDefault();
+
+            return View(oPagos);
+        }
+
+        [HttpPost]
+        public IActionResult Eliminar_Pagos(Pago oPago)
+        {
+
+            _DBContext.Pagos.Remove(oPago);
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Pagos", "Home");
+        }
     }
 }

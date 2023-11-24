@@ -1,0 +1,41 @@
+﻿@model INSCRIPCION_ESTUDIANTIL.Models.Seccione
+
+@{
+    ViewData["Title"] = "Eliminar_Secciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">Estas seguro de eliminar la seccion?</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+
+        <form asp-action="Eliminar_Secciones" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="IdSecciones" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="IdSecciones">Nombre de la Seccion</label>
+                <input class="form-control form-control-sm" asp-for="NombreSeccion" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="CuposSeccion">Cupones de la Seccion</label>
+                <input class="form-control form-control-sm" asp-for="CuposSeccion" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="IdCurso">Curso de la Seccion</label>
+                <input class="form-control form-control-sm" asp-for="IdCurso" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+
+                <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="Index" asp-controller="Home">Volver</a>
+
+
+            </div>
+        </form>
+
+    </div>
+</div>

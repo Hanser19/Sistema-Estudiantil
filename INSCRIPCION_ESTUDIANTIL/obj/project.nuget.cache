@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VbsmrFD6NVvzeTmnVH2zPFQ52iYLdr1LEWqd68rL5PidaaNG0+BNWkFxscvGRXdR1GJtkdHzrIxNNQp4TALNzQ==",
+  "dgSpecHash": "MZODZhLvA7hwcgs4xb62G/5+rU7HJ6l2uPAMGrLOMWj33529GpghW9ZFIg5QJ0Z21s/iMt+x5D70/qRgGHYuVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hanser Perez\\source\\repos\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj",
+  "projectFilePath": "C:\\Users\\Hanser Perez\\source\\repos\\Sistema-Estudiantil\\INSCRIPCION_ESTUDIANTIL\\INSCRIPCION_ESTUDIANTIL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hanser Perez\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Hanser Perez\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

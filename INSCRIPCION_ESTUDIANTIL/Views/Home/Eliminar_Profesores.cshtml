@@ -1,0 +1,48 @@
+﻿@model INSCRIPCION_ESTUDIANTIL.Models.Profesore
+
+@{
+    ViewData["Title"] = "Eliminar_Profesores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">Estas seguro de eliminar este profesor?</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+
+        <form asp-action="Eliminar_Profesores" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="IdProfesor" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="IdProfesor">Nombre del Profesor</label>
+                <input class="form-control form-control-sm" asp-for="NombreProfesor" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="CorreoProfesor">Correo del Profesor</label>
+                <input class="form-control form-control-sm" asp-for="CorreoProfesor" type="text" disabled />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="IdSecciones">Secciones</label>
+                <input class="form-control form-control-sm" asp-for="oSecciones.NombreSeccion" type="text" disabled />
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="IdAsignaturas">Asignaturas</label>
+                <input class="form-control form-control-sm" asp-for="oAsignatura.NombreAsignatura" type="text" disabled />
+
+            </div>
+
+            <div class="mb-2">
+
+                <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="Profesores" asp-controller="Home">Volver</a>
+
+
+            </div>
+        </form>
+
+    </div>
+</div>

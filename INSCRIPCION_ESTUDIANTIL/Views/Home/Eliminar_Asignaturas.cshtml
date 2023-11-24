@@ -1,0 +1,41 @@
+﻿@model INSCRIPCION_ESTUDIANTIL.Models.Asignatura
+
+@{
+    ViewData["Title"] = "Eliminar_Asignaturas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">Estas seguro de eliminar la Asignatura?</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+
+        <form asp-action="Eliminar_Asignaturas" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="IdAsignaturas" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="IdAsignaturas">Nombre de la Asignatura</label>
+                <input class="form-control form-control-sm" asp-for="NombreAsignatura" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Descripcion">Descripcion de la Asignatura</label>
+                <input class="form-control form-control-sm" asp-for="Descripcion" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Creditos">Creditos de la Asignatura</label>
+                <input class="form-control form-control-sm" asp-for="Creditos" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+
+                <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="Index" asp-controller="Home">Volver</a>
+
+
+            </div>
+        </form>
+
+    </div>
+</div>
