@@ -286,6 +286,52 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
             return View(lista);
         }
 
+
+        //HttpGet para exportar las inscripciones al excel
+        [HttpGet]
+        public async Task<FileResult> ExportarSeccionesAlExcel()
+        {
+            var secciones = await _DBContext.Secciones.ToListAsync();
+            var nombreArchivo = $"Listado de Secciones.xlsx";
+            return GenerarExcelSecciones(nombreArchivo, secciones);
+        }
+
+        //Generar excel de Inscripciones
+        private FileResult GenerarExcelSecciones(string nombreArchivo, IEnumerable<Seccione> secciones)
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID_SECCIONES"),
+                new DataColumn("NOMBRE_SECCION"),
+                new DataColumn("CUPOS_SECCION"),
+                new DataColumn("ID_CURSO"),
+            });
+
+            foreach (var seccion in secciones)
+            {
+                dataTable.Rows.Add(seccion.IdSecciones,
+                    seccion.NombreSeccion,
+                    seccion.CuposSeccion,
+                     seccion.IdCurso);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable, "Lista de Secciones");
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        nombreArchivo);
+                }
+            }
+        }
+
+
         [HttpGet]
         public IActionResult Secciones_Detalle(int Id_Secciones)
         {
@@ -353,6 +399,50 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
             return View(lista);
         }
 
+        //HttpGet para exportar las Asignaturas al excel
+        [HttpGet]
+        public async Task<FileResult> ExportarAsignaturasAlExcel()
+        {
+            var asignaturas = await _DBContext.Asignaturas.ToListAsync();
+            var nombreArchivo = $"Listado de asignaturas.xlsx";
+            return GenerarExcelAsignaturas(nombreArchivo, asignaturas);
+        }
+
+        //Generar excel de Asignaturas
+        private FileResult GenerarExcelAsignaturas(string nombreArchivo, IEnumerable<Asignatura> asignaturas)
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID_ASIGNATURAS"),
+                new DataColumn("NOMBRE_ASIGNATURA"),
+                new DataColumn("DESCRIPCION"),
+                new DataColumn("CREDITOS"),
+            });
+
+            foreach (var asignatura in asignaturas)
+            {
+                dataTable.Rows.Add(asignatura.IdAsignaturas,
+                    asignatura.NombreAsignatura,
+                    asignatura.Descripcion,
+                     asignatura.Creditos);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable, "Lista de Asignaturas");
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        nombreArchivo);
+                }
+            }
+        }
+
         [HttpGet]
         public IActionResult Asignaturas_Detalle(int Id_Asignaturas)
         {
@@ -410,6 +500,53 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
         {
             List<Profesore> lista = _DBContext.Profesores.ToList();
             return View(lista);
+        }
+
+        //HttpGet para exportar las Profesores al excel
+        [HttpGet]
+        public async Task<FileResult> ExportarProfesoresAlExcel()
+        {
+            var profesores = await _DBContext.Profesores.ToListAsync();
+            var nombreArchivo = $"Listado de Profesores.xlsx";
+            return GenerarExcelProfesores(nombreArchivo, profesores);
+        }
+
+        //Generar excel de Profesores
+        private FileResult GenerarExcelProfesores(string nombreArchivo, IEnumerable<Profesore> profesores)
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID_PROFESOR"),
+                new DataColumn("NOMBRE_PROFESOR"),
+                new DataColumn("CORREO_PROFESOR"),
+                new DataColumn("ID_SECCIONES"),
+                new DataColumn("ID_ASIGNATURAS"),
+
+            });
+
+            foreach (var profesor in profesores)
+            {
+                dataTable.Rows.Add(profesor.IdProfesor,
+                    profesor.NombreProfesor,
+                    profesor.CorreoProfesor,
+                     profesor.IdSecciones,
+                     profesor.IdAsignaturas);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable, "Lista de Profesores");
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        nombreArchivo);
+                }
+            }
         }
 
         [HttpGet]
@@ -483,6 +620,51 @@ namespace INSCRIPCION_ESTUDIANTIL.Controllers
         {
             List<Pago> lista = _DBContext.Pagos.ToList();
             return View(lista);
+        }
+
+
+        //HttpGet para exportar los pagos al excel
+        [HttpGet]
+        public async Task<FileResult> ExportarPagosAlExcel()
+        {
+            var pagos = await _DBContext.Pagos.ToListAsync();
+            var nombreArchivo = $"Listado de Pagos.xlsx";
+            return GenerarExcelProfesores(nombreArchivo, pagos);
+        }
+
+        //Generar excel de Profesores
+        private FileResult GenerarExcelProfesores(string nombreArchivo, IEnumerable<Pago> pagos)
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID_PAGO"),
+                new DataColumn("FECHA_PAGO"),
+                new DataColumn("ID_INSCRIPCION"),
+                new DataColumn("MONTO"),
+            });
+
+            foreach (var pago in pagos)
+            {
+                dataTable.Rows.Add(pago.IdPago,
+                    pago.FechaPago,
+                    pago.IdInscripcion,
+                     pago.Monto);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable, "Lista de Pagos");
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        nombreArchivo);
+                }
+            }
         }
 
         [HttpGet]

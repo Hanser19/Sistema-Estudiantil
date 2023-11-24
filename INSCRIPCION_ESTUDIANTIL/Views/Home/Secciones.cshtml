@@ -35,6 +35,8 @@
                         <td>
                             <a class="btn btn-primary btn-sm" asp-action="Secciones_Detalle" asp-controller="Home" asp-route-ID_SECCIONES="@item.IdSecciones">Editar</a>
                             <a class="btn btn-danger btn-sm" asp-action="Eliminar_Secciones" asp-controller="Home" asp-route-ID_SECCIONES="@item.IdSecciones">Eliminar</a>
+                            <a class="btn btn-success btn-sm" asp-action="ExportarSeccionesAlExcel" asp-controller="Home" asp-route-ID_CURSO="@item.IdSecciones">Exportar a Excel</a>
+
                         </td>
                     </tr>
 
