@@ -13,6 +13,8 @@
 
     <div class="card-body">
         <a class="btn btn-success btn-sm" asp-action="Inscripcion_Detalle" asp-controller="Home" asp-route-ID_INSCRIPCION="0">Crear Nuevo</a>
+        <a class="btn btn-success btn-sm" asp-action="ExportarInscripcionesAlExcel" asp-controller="Home" asp-route-ID_CURSO="0">Exportar a Excel</a>
+
         <hr />
 
         <table class="table table-striped">
@@ -36,8 +38,6 @@
                         <td>
                             <a class="btn btn-primary btn-sm" asp-action="Inscripcion_Detalle" asp-controller="Home" asp-route-ID_INSCRIPCION="@item.IdInscripcion">Editar</a>
                             <a class="btn btn-danger btn-sm" asp-action="Eliminar_Inscripcion" asp-controller="Home" asp-route-ID_INSCRIPCION="@item.IdInscripcion">Eliminar</a>
-                            <a class="btn btn-success btn-sm" asp-action="ExportarInscripcionesAlExcel" asp-controller="Home" asp-route-ID_CURSO="@item.IdInscripcion">Exportar a Excel</a>
-
                         </td>
                     </tr>
 
